@@ -42,6 +42,9 @@ def thinkingBox(seconds, qtd):
 def write(msg):
     pgui.write(msg)
 
+def fechaJanela():
+    pgui.hotkey('alt', 'f4')
+
 def alert(msg):
     pgui.alert(msg)
 
@@ -97,10 +100,27 @@ def notepadStartPart():
     sleep(2)
     write('-cyberHeat34')
     sleep(2)
-    pgui.hotkey('alt', 'f4')
+    fechaJanela()
     sleep(1)
     press('right')
     press('enter')
+
+def startChapterOne():
+    alert('What just happened? Am i crazy or something?')
+    alert('Well, maybe if I should try to CONTROL the computer too...')
+    alert('It is not that hard i think...')
+    press('win')
+    sleep(1)
+    write('chrome')
+    sleep(1)
+    press('enter')
+    sleep(2)
+    write('https://pt.wikipedia.org/wiki/Cognato')
+    sleep(1)
+    press('enter')
+    sleep(4)
+    fechaJanela()
+    alert("Well, it's easy, but, who are the owner of this COMPUTER?")
 
 #Código do jogo abaixo
 while True:
@@ -113,6 +133,7 @@ while True:
         
         startDialogs()
         notepadStartPart()
+        startChapterOne()
         
     elif verification == 2:
         listaPersonagens()
