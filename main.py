@@ -51,6 +51,9 @@ def alert(msg):
 def press(button):
     pgui.press(button)
 
+def prompt(msg, title):
+    pgui.prompt(msg, title)
+
 def startDialogs():
     loadingScreen()
     thinkingBox(3, 4)
@@ -125,17 +128,18 @@ def startChapterOne():
 
 def chapterTwoName():
     sleep(1)
-    conf1 = pgui.confirm(text='Can you see or hear me?', title='', buttons=['Yes', 'No'])
+    conf1 = pgui.confirm('Can you see or hear me?', 'Someone says', ['Yes', 'No'])
     if conf1 == "Yes":
         alert('Great, at least i am not alone')
-        nome2 = pgui.prompt(text='Qual seu nome?', title='' , default='')
+        nome2 = prompt('What is your name?', 'Someone says')
         sleep(1)
         alert(f'Ok, hello {nome2}')
     elif conf1 == "No":
         alert('How did you answered me so? Dumby')
         sleep(1)
         alert('Im not kidding')
-        nome2 = pgui.prompt(text='Qual seu nome?', title='' , default='')
+        nome2 = prompt('What is your name?', 'Someone says')
+        alert(f'Ok, hello {nome2}')
 #Código do jogo abaixo
 while True:
     menuModel() 
@@ -159,3 +163,4 @@ while True:
         fraseAdeusRandom()
         sleep(0.5)
         break
+
