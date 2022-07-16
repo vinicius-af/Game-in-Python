@@ -4,7 +4,7 @@ import pyautogui as pgui
 
 #Listas necessárias para o jogo
 listaFrasesAdeus = ['OK! Espero que nos encontremos novamente!', 'Adeus, volte jogar outra hora!', 'Sinto que estaremos juntos sempre', 'Até mais meu consagrado!', 'Obrigado por tentar :)']
-listaPersonagens = ['Personagem principal', 'Unknown voice', 'Some Hacker', 'cyberHeat34']
+listaPersonagens = ['You', 'Unknown voice', 'Some Hacker', 'cyberHeat34']
 
 
 #Funções do jogo
@@ -82,7 +82,7 @@ def notepadStartPart():
     sleep(2)
     press('enter')
     sleep(1)
-    write(f'how are you {nome}?')
+    write(f'how are you {nome1}?')
     sleep(0.5)
     press('enter')
     sleep(0.5)
@@ -90,7 +90,7 @@ def notepadStartPart():
     sleep(2)
     press('enter')
     sleep(1)
-    write(f"And please {nome}, don't think we're still locked in that game")
+    write(f"And please {nome1}, don't think we're still locked in that game")
     sleep(2)
     press('enter')
     sleep(1)
@@ -121,12 +121,26 @@ def startChapterOne():
     sleep(4)
     fechaJanela()
     alert("Well, it's easy, but, who are the owner of this COMPUTER?")
+    sleep(1)
 
+def chapterTwoName():
+    sleep(1)
+    conf1 = pgui.confirm(text='Can you see or hear me?', title='', buttons=['Yes', 'No'])
+    if conf1 == "Yes":
+        alert('Great, at least i am not alone')
+        nome2 = pgui.prompt(text='Qual seu nome?', title='' , default='')
+        sleep(1)
+        alert(f'Ok, hello {nome2}')
+    elif conf1 == "No":
+        alert('How did you answered me so? Dumby')
+        sleep(1)
+        alert('Im not kidding')
+        nome2 = pgui.prompt(text='Qual seu nome?', title='' , default='')
 #Código do jogo abaixo
 while True:
     menuModel() 
     verification = int(input('O que deseja fazer? '))
-    nome = str(input('Antes de tudo, qual seu nome? '))
+    nome1 = str(input('Antes de tudo, qual seu nome? '))
 
     pgui.PAUSE = 0.8
     if verification == 1:
@@ -134,6 +148,7 @@ while True:
         startDialogs()
         notepadStartPart()
         startChapterOne()
+        chapterTwoName()
         
     elif verification == 2:
         listaPersonagens()
