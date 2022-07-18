@@ -134,9 +134,9 @@ def chapterTwoName():
     conf1 = pgui.confirm('Can you see or hear me?', 'Someone says', ['Yes', 'No'])
     if conf1 == "Yes":
         alert('Great, at least i am not alone')
-        nome2 = prompt('What is your name?', 'Someone says')
+        nome3 = prompt('What is your name?', 'Someone says')
         sleep(1)
-        alert(f'Ok, hello {nome2}')
+        alert(f'Ok, hello {nome3}')
     elif conf1 == "No":
         alert('How did you answered me so? Dumby')
         sleep(1)
@@ -146,7 +146,7 @@ def chapterTwoName():
 
 def continuationChap2():
     alert('Well, whatever, we need to discover-')
-    fechaJanela()
+    sleep(1)
     press('winleft')
     sleep(1)
     write('notepad')
@@ -159,9 +159,26 @@ def continuationChap2():
     write('i see there are two of you now ')
     sleep(1)
     press('enter')
-    write("next tie you try to stop me i will open cmd c:")
+    write("next time you try to stop me i will open cmd c:")
     sleep(2)
     fechaNotepad()
+
+def chapter3():
+    alert('WE WILL DO IT, WE CAN')
+    sleep(1)
+    press('winleft')
+    sleep(0.5)
+    write('cmd')
+    sleep(0.5)
+    press('enter')
+    sleep(1)
+    write('netstat')
+    sleep(0.5)
+    press('enter')
+    sleep(1)
+    write('pathping googe.com')
+    sleep(0.5)
+    press('enter')
 
 #Código do jogo abaixo
 while True:
@@ -177,6 +194,7 @@ while True:
         startChapterOne()
         chapterTwoName()
         continuationChap2()
+        chapter3()
         
     elif verification == 2:
         listaPersonagens()
