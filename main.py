@@ -42,6 +42,12 @@ def thinkingBox(seconds, qtd):
 def write(msg):
     pgui.write(msg)
 
+def fechaNotepad():
+    fechaJanela()
+    sleep(1)
+    press('right')
+    press('enter')
+
 def fechaJanela():
     pgui.hotkey('alt', 'f4')
 
@@ -56,7 +62,7 @@ def prompt(msg, title):
 
 def startDialogs():
     loadingScreen()
-    thinkingBox(3, 4)
+    alert('Chapter 1')
     alert('Unknown voice: W-Who are you?')
     sleep(1)
     alert('Unknown voice: I`m lost. Can you help me?')
@@ -103,11 +109,7 @@ def notepadStartPart():
     sleep(2)
     write('-cyberHeat34')
     sleep(2)
-    fechaJanela()
-    sleep(1)
-    press('right')
-    press('enter')
-
+    fechaNotepad()
 def startChapterOne():
     alert('What just happened? Am i crazy or something?')
     alert('Well, maybe if I should try to CONTROL the computer too...')
@@ -127,6 +129,7 @@ def startChapterOne():
     sleep(1)
 
 def chapterTwoName():
+    alert('Chapter 2')
     sleep(1)
     conf1 = pgui.confirm('Can you see or hear me?', 'Someone says', ['Yes', 'No'])
     if conf1 == "Yes":
@@ -140,6 +143,26 @@ def chapterTwoName():
         alert('Im not kidding')
         nome2 = prompt('What is your name?', 'Someone says')
         alert(f'Ok, hello {nome2}')
+
+def continuationChap2():
+    alert('Well, whatever, we need to discover-')
+    fechaJanela()
+    press('winleft')
+    sleep(1)
+    write('notepad')
+    sleep(0.4)
+    press('enter')
+    sleep(1)
+    write("it's me again c:")
+    sleep(1)
+    press('enter')
+    write('i see there are two of you now ')
+    sleep(1)
+    press('enter')
+    write("next tie you try to stop me i will open cmd c:")
+    sleep(2)
+    fechaNotepad()
+
 #Código do jogo abaixo
 while True:
     menuModel() 
@@ -153,6 +176,7 @@ while True:
         notepadStartPart()
         startChapterOne()
         chapterTwoName()
+        continuationChap2()
         
     elif verification == 2:
         listaPersonagens()
