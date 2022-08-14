@@ -170,6 +170,8 @@ def chapter3():
     sleep(1)
     write('netstat')
     sleep(0.5)
+    press('enter')
+    sleep(2)
     fechaJanela()
 
 def lastChap():
@@ -200,6 +202,7 @@ while True:
         chapterTwoName()
         continuationChap2()
         chapter3()
+        lastChap()
         
     elif verification == 2:
         listaPersonagens()
