@@ -37,6 +37,7 @@ def loadingScreen():
     print('AI activated')
     sleep(3)
     print("The game you are playing is a demonstration version of the original(cz i was tired and didn't wanted to make more lmao), more chapters coming soon")
+    sleep(5)
 
 def thinkingBox(seconds, qtd):
     for i in range(qtd):
